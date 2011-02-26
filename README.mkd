@@ -12,7 +12,7 @@ INSTALLATION
 
 First, you should install Python (2.6) and [Pygame](http://www.pygame.org/) (1.9.1) module. (Pytris may work with other version, I didn't test.) 
 
-Clone source code, then download resource files [here](http://dl.dbank.com/c032hk9kod) and extract all files to Pytris directory.
+Clone source code, then download resource files [here](http://dl.dbank.com/c0c5w9zs2s) and extract all files to Pytris directory.
 
     ├── asset
     │   ├── font
