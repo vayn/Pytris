@@ -402,7 +402,7 @@ class StartUp(Paused):
 
     def firstDisplay(self, screen):
         screen.fill(BLACK)
-        text="PyTetris"
+        text="Pytris"
         self.showTextScreen(screen, text, font="marblerun.ttf")
         pygame.display.update()
 
