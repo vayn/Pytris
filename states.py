@@ -75,8 +75,7 @@ class Play(State):
                 Play.lastMoveSidewaysTime = time.time()
                 while True:
                     event = pygame.event.wait()
-                    if event is not None and event.type == KEYDOWN:
-                        if event.key != K_p:
+                    if event is not None and event.key != K_p:
                             break
 
             if event.key == K_LEFT or event.key == K_a or event.key == K_h:
@@ -104,18 +103,9 @@ class Play(State):
             # rotate the block (if allowed), then check if its new position is a
             # valid one, and if not, then rotate it back.
             if event.key == K_UP or event.key == K_w or event.key == K_k:
-                self.curPiece['rotation'] = (self.curPiece['rotation'] + 1) % \
-                        len(SHAPES[self.curPiece['shape']])
-                if not self.isValidPosition(self.board, self.curPiece):
-                    self.curPiece['rotation'] = (self.curPiece['rotation'] - 1) % \
-                            len(SHAPES[self.curPiece['shape']])
+                self.rotatedRight()
             if event.key == K_q or event.key == K_i:
-                self.curPiece['rotation'] = (self.curPiece['rotation'] - 1) % \
-                        len(SHAPES[self.curPiece['shape']])
-                if not self.isValidPosition(self.board, self.curPiece):
-                    self.curPiece['rotation'] = (self.curPiece['rotation'] + 1) % \
-                            len(SHAPES['shape'])
-
+                self.rotatedLeft()
             # making the block fall faster
             if event.key == K_DOWN or event.key == K_s or event.key == K_j:
                 Play.movingDown = True
@@ -197,6 +187,20 @@ class Play(State):
 
     def calculateFallFreq(self, level):
         return 0.27 - (level * 0.02)
+
+    def rotatedLeft(self):
+        self.curPiece['rotation'] = (self.curPiece['rotation'] + 1) % \
+                len(SHAPES[self.curPiece['shape']])
+        if not self.isValidPosition(self.board, self.curPiece):
+            self.curPiece['rotation'] = (self.curPiece['rotation'] - 1) % \
+                    len(SHAPES[self.curPiece['shape']])
+
+    def rotatedRight(self):
+        self.curPiece['rotation'] = (self.curPiece['rotation'] - 1) % \
+                len(SHAPES[self.curPiece['shape']])
+        if not self.isValidPosition(self.board, self.curPiece):
+            self.curPiece['rotation'] = (self.curPiece['rotation'] + 1) % \
+                    len(SHAPES[self.curPiece['shape']])
 
     def getNewBoard(self):
         board = []

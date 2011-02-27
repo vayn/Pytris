@@ -6,7 +6,6 @@
 import os
 import pygame
 import states
-from pygame.locals import *
 
 __author__ = "Vayn a.k.a. VT"
 __copyright__ = "Copyright (c) 2011, Vincent Tsai"
@@ -30,7 +29,7 @@ class Game:
         pygame.init()
 
         clock = pygame.time.Clock()
-        screen = pygame.display.set_mode((states.WINDOWWIDTH, states.WINDOWHEIGHT), NOFRAME)
+        screen = pygame.display.set_mode((states.WINDOWWIDTH, states.WINDOWHEIGHT), states.NOFRAME)
         pygame.display.set_caption('Pytris ' + __version__)
         pygame.mouse.set_visible(False)
 
