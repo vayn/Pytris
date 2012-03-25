@@ -10,7 +10,7 @@ Pytris is a [Tetris](http://en.wikipedia.org/wiki/Tetris) clone comes from [Tetr
 INSTALLATION
 ============
 
-First, you should install Python (2.6) and [Pygame](http://www.pygame.org/) (1.9.1) module. (Pytris may work with other version, I didn't test.) 
+First, you should install Python (>=2.6) and [Pygame](http://www.pygame.org/) (1.9.1) module. (Pytris may work with other version, I didn't test.) 
 
 <del>Clone source code, then download resource files [here](http://dl.dbank.com/c0c5w9zs2s) and extract all files to Pytris directory.</del>
 
