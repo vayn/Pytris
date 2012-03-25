@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 # vim:fileencoding=utf-8
 # @Author: Vayn a.k.a. VT <vayn@vayn.de>
 # @Name: states.py
@@ -13,6 +12,7 @@ from pygame.locals import *
 from tetrominoes import *
 
 
+# New-style class for Python2
 __metaclass__ = type
 
 
@@ -352,10 +352,10 @@ class Play(State):
                             BLOCKSIZE-1, BLOCKSIZE-1))
 
   def playMusic(self):
-    if random.randint(0, 1) == 0:
-      song = loadData('tetris.mid', 'music')
-    else:
-      song = loadData('funky_stars.mp3', 'music')
+    #if random.randint(0, 1) == 0:
+    song = loadData('tetris.mid', 'music')
+    #else:
+      #song = loadData('funky_stars.mp3', 'music')
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(-1, 0.0)
 

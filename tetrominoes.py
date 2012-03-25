@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 # vim:fileencoding=utf-8
 # @Author: Vayn a.k.a. VT <vayn@vayn.de>
 # @Name: tetrominoes.py

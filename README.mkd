@@ -22,14 +22,22 @@ First, you should install Python (>=2.6) and [Pygame](http://www.pygame.org/) (1
     ├── states.py
     └── tetrominoes.py 
 
+TROUBLESHOOTING
+===============
+
+```
+pygame.error: /etc/timidity.cfg: No such file or directory
+```
+
+You are missing timidity.cfg. Make sure you have TiMidity installed. Please read [this article on ArchWiki](https://wiki.archlinux.org/index.php/Timidity) for more information.
+
+
 HOW TO PLAY
 ===========
 
 To start playing Pytris:
 
     $ python pytris.py
-
-NOTICE: Pytris must be run with Python2.
 
 There are three ways to control tetrominoes. You can use **arrows keys**, **WASD** keys or **HJKL** keys in Pytris.
 
