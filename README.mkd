@@ -12,7 +12,7 @@ INSTALLATION
 
 First, you should install Python (2.6) and [Pygame](http://www.pygame.org/) (1.9.1) module. (Pytris may work with other version, I didn't test.) 
 
-Clone source code, then download resource files [here](http://dl.dbank.com/c0c5w9zs2s) and extract all files to Pytris directory.
+<del>Clone source code, then download resource files [here](http://dl.dbank.com/c0c5w9zs2s) and extract all files to Pytris directory.</del>
 
     ├── asset
     │   ├── font
@@ -28,6 +28,8 @@ HOW TO PLAY
 To start playing Pytris:
 
     $ python pytris.py
+
+NOTICE: Pytris must be run with Python2.
 
 There are three ways to control tetrominoes. You can use **arrows keys**, **WASD** keys or **HJKL** keys in Pytris.
 
@@ -46,6 +48,4 @@ Complete lines to gain points and raise the level!
 LICENSE
 =======
 
-This program is free software, you can redistribute it and/or modify it under GPL.
-
-
+This program is free software, you can redistribute it and/or modify it under GPL3.

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # vim:fileencoding=utf-8
 # @Author: Vayn a.k.a. VT <vayn@vayn.de>
 # @Name: tetrominoes.py
@@ -38,127 +38,147 @@ BORDERCOLOR = BLACK
 BGCOLOR = GRAY
 COLORS = (BLUE, GREEN, RED, YELLOW)
 
+
 # Shape (5 * 5)
-S_SHAPE = [['.....',
-            '.....',
-            '..OO.',
-            '.OO..',
-            '.....'],
-           ['.....',
-            '..O..',
-            '..OO.',
-            '...O.',
-            '.....']]
+S_SHAPE = [
+  ['.....',
+   '.....',
+   '..OO.',
+   '.OO..',
+   '.....'],
+  ['.....',
+   '..O..',
+   '..OO.',
+   '...O.',
+   '.....']
+]
 
-Z_SHAPE =[['.....',
-           '.....',
-           '.OO..',
-           '..OO.',
-           '.....'],
-          ['.....',
-           '..O..',
-           '.OO..',
-           '.O...',
-           '.....']]
+Z_SHAPE = [
+  ['.....',
+   '.....',
+   '.OO..',
+   '..OO.',
+   '.....'],
+  ['.....',
+   '..O..',
+   '.OO..',
+   '.O...',
+   '.....']
+]
 
-I_SHAPE =[['..O..',
-           '..O..',
-           '..O..',
-           '..O..',
-           '.....'],
-          ['.....',
-           '.....',
-           'OOOO.',
-           '.....',
-           '.....']]
+I_SHAPE = [
+  ['..O..',
+   '..O..',
+   '..O..',
+   '..O..',
+   '.....'],
+  ['.....',
+   '.....',
+   'OOOO.',
+   '.....',
+   '.....']
+]
 
-O_SHAPE =[['.....',
-           '.....',
-           '.OO..',
-           '.OO..',
-           '.....']]
+O_SHAPE = [
+  ['.....',
+   '.....',
+   '.OO..',
+   '.OO..',
+   '.....']
+]
 
-J_SHAPE = [['.....',
-            '.O...',
-            '.OOO.',
-            '.....',
-            '.....'],
-           ['.....',
-            '..OO.',
-            '..O..',
-            '..O..',
-            '.....'],
-           ['.....',
-            '.....',
-            '.OOO.',
-            '...O.',
-            '.....'],
-           ['.....',
-            '..O..',
-            '..O..',
-            '.OO..',
-            '.....']]
+J_SHAPE = [
+  ['.....',
+   '.O...',
+   '.OOO.',
+   '.....',
+   '.....'],
+  ['.....',
+   '..OO.',
+   '..O..',
+   '..O..',
+   '.....'],
+  ['.....',
+   '.....',
+   '.OOO.',
+   '...O.',
+   '.....'],
+  ['.....',
+   '..O..',
+   '..O..',
+   '.OO..',
+   '.....']
+]
 
-L_SHAPE = [['.....',
-            '...O.',
-            '.OOO.',
-            '.....',
-            '.....'],
-           ['.....',
-            '..O..',
-            '..O..',
-            '..OO.',
-            '.....'],
-           ['.....',
-            '.....',
-            '.OOO.',
-            '.O...',
-            '.....'],
-           ['.....',
-            '.OO..',
-            '..O..',
-            '..O..',
-            '.....']]
+L_SHAPE = [
+  ['.....',
+   '...O.',
+   '.OOO.',
+   '.....',
+   '.....'],
+  ['.....',
+   '..O..',
+   '..O..',
+   '..OO.',
+   '.....'],
+  ['.....',
+   '.....',
+   '.OOO.',
+   '.O...',
+   '.....'],
+  ['.....',
+   '.OO..',
+   '..O..',
+   '..O..',
+   '.....']
+]
 
-T_SHAPE = [['.....',
-            '..O..',
-            '.OOO.',
-            '.....',
-            '.....'],
-           ['.....',
-            '..O..',
-            '..OO.',
-            '..O..',
-            '.....'],
-           ['.....',
-            '.....',
-            '.OOO.',
-            '..O..',
-            '.....'],
-           ['.....',
-            '..O..',
-            '.OO..',
-            '..O..',
-            '.....']]
+T_SHAPE = [
+  ['.....',
+   '..O..',
+   '.OOO.',
+   '.....',
+   '.....'],
+  ['.....',
+   '..O..',
+   '..OO.',
+   '..O..',
+   '.....'],
+  ['.....',
+   '.....',
+   '.OOO.',
+   '..O..',
+   '.....'],
+  ['.....',
+   '..O..',
+   '.OO..',
+   '..O..',
+   '.....']
+]
 
-SHAPES = {'S': S_SHAPE,
-          'Z': Z_SHAPE,
-          'J': J_SHAPE,
-          'L': L_SHAPE,
-          'I': I_SHAPE,
-          'O': O_SHAPE,
-          'T': T_SHAPE}
+SHAPES = {
+  'S': S_SHAPE,
+  'Z': Z_SHAPE,
+  'J': J_SHAPE,
+  'L': L_SHAPE,
+  'I': I_SHAPE,
+  'O': O_SHAPE,
+  'T': T_SHAPE
+}
 
-for p in SHAPES:                    # loop through each shape
-    for i in range(len(SHAPES[p])): # loop through each rotation of the shape
-        shapeData = []
-        for x in range(5):          # loop through each column of the rotation
-            column = []
-            for y in range(5):      # loop through each character of the column
-                if SHAPES[p][i][x][y] == '.':
-                    column.append(BLANK)
-                else:
-                    column.append(1)
-            shapeData.append(column)
-        SHAPES[p][i] = shapeData
-
+# loop through each shape
+for p in SHAPES:
+  # loop through each rotation of the shape
+  for i in range(len(SHAPES[p])):
+    shapeData = []
+    # loop through each column of the rotation
+    for x in range(5):
+      column = []
+      # loop through each character of the column
+      for y in range(5):
+        if SHAPES[p][i][x][y] == '.':
+          column.append(BLANK)
+        else:
+          column.append(1)
+      shapeData.append(column)
+    SHAPES[p][i] = shapeData
