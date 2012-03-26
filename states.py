@@ -352,10 +352,10 @@ class Play(State):
                             BLOCKSIZE-1, BLOCKSIZE-1))
 
   def playMusic(self):
-    #if random.randint(0, 1) == 0:
-    song = loadData('tetris.mid', 'music')
-    #else:
-      #song = loadData('funky_stars.mp3', 'music')
+    if random.randint(0, 1) == 0:
+      song = loadData('tetris.mid', 'music')
+    else:
+      song = loadData('funky_stars.mp3', 'music')
     pygame.mixer.music.load(song)
     pygame.mixer.music.play(-1, 0.0)
 
